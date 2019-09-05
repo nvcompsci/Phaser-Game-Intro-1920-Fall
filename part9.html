@@ -137,11 +137,17 @@ function update() {
     player.body.velocity.x = 0;
 
     //If statement - conditional
-    if (enemy.body.position.x > game.width - 32) {
+    if (enemy.body.position.x > game.width - 40) {
         //Make pig move back to the left
         enemy.body.velocity.x = -150
         enemy.animations.play('left')
     }
+    else if (enemy.body.position.x < 0 + 40) {
+             //go right
+        enemy.body.velocity.x = 150
+        enemy.animations.play('right')  
+     }
+    
     
     if (cursors.left.isDown)
     {
